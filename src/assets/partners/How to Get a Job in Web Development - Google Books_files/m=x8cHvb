@@ -1,0 +1,6 @@
+try{
+bep_j("x8cHvb");
+
+bep_k();
+}catch(e){_DumpException(e)}
+// Google Inc.
