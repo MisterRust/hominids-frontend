@@ -7,7 +7,6 @@ interface ButtonProps {
   $width: number;
   $height: number;
   $marginTop?: number;
-  $radius?: number;
 }
 
 const StyleMain = styled.div<ButtonProps>`
@@ -21,7 +20,7 @@ const StyleMain = styled.div<ButtonProps>`
     #a74fbe 37.37%,
     #302072 89.89%
   );
-  border-radius: ${(props) => props.$radius || 100}px;
+  border-radius: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,17 +47,15 @@ export const GradientButton = ({
   width,
   height,
   marginTop,
-  radius
 }: {
   icon?: string;
   title: string;
   width: number;
   height: number;
   marginTop?: number;
-  radius?: number
 }) => {
   return (
-    <StyleMain $width={width} $height={height} $marginTop={marginTop} $radius={radius}>
+    <StyleMain $width={width} $height={height} $marginTop={marginTop}>
       {icon && (
         <Icon
           //@ts-ignore

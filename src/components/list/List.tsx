@@ -44,7 +44,6 @@ const H4WithFlex = styled(H2)`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  font-size: 36px;
   @media (max-width: 768px) {
     color: #fff;
     font-family: Lato;
