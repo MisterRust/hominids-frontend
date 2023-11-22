@@ -53,7 +53,8 @@ const StyleMainGroup = styled.div`
 `;
 
 const BarContainer = styled.div`
-  width: 327px;
+  width: 100%;
+  /* max-width: 1440px; */
   height: 56px;
   padding: 5px 20px;
   flex-shrink: 0;

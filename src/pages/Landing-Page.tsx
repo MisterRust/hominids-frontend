@@ -584,8 +584,8 @@ const H4WithWidth = styled.div`
 export default function LandingPage() {
   return (
     <StyleLanding>
-      {/* <BackgroundEffect />
-      <LandingpageBanner /> */}
+      <BackgroundEffect />
+      <LandingpageBanner />
       <IntroText>
         <Heading $color="white" $weight={900} $style={"Black"} $align="center">
           Explore our&nbsp;marketplace
