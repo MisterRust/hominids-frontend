@@ -1,10 +1,13 @@
-import React from "react";
 import Header from "components/layout/header";
 import styled from "styled-components";
 import { ControlButton } from "components/buttons";
 import { H6, H1 } from "styles";
 import { NftCard } from "components/cards";
 import nftImg from "../../assets/cards/nft_avatar.png";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 const AVATARS = [1, 2, 3, 4, 5, 6, 7];
 const Page = styled.div`
@@ -84,19 +87,37 @@ const Explore = () => {
           <ControlButton currInd={3} total={19} />
         </Container>
       </FullWidthDiv>
-      <NftBox>
-        {AVATARS.map((avatar) => {
-          return (
-            <NftCard
-              key={avatar}
-              items={1483}
-              floorPrice={1672}
-              volume={2000}
-              avatar={nftImg}
+      {/* <Swiper slidesPerView={'auto'} spaceBetween={36} className="mySwiper">
+        {collections.map((collection, key) => (
+          <SwiperSlide key={key}>
+            <CollectionItem
+              collection={{
+                id: collection.collection_address,
+                name: collection.name,
+                image: collection.logo,
+              }}
             />
-          );
-        })}
+          </SwiperSlide>
+        ))}
+      </Swiper> */}
+      <NftBox>
+        <Swiper slidesPerView={'auto'} spaceBetween={36} className="mySwiper" slidesPerView={3}>
+          {AVATARS.map((avatar, key) => {
+            return (
+            <SwiperSlide key={key}>
+              <NftCard
+                key={avatar}
+                items={1483}
+                floorPrice={1672}
+                volume={2000}
+                avatar={nftImg}
+              />
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
       </NftBox>
+      
       <Space $height={50} />
       <FullWidthDiv>
         <Container>
@@ -157,6 +178,23 @@ const Explore = () => {
           );
         })}
       </NftBox>
+      <Swiper
+        slidesPerView={3}
+        spaceBetween={30}
+        
+        className="mySwiper"
+        style={{color: 'white'}}
+      >
+        <SwiperSlide>Slide 1</SwiperSlide>
+        <SwiperSlide>Slide 2</SwiperSlide>
+        <SwiperSlide>Slide 3</SwiperSlide>
+        <SwiperSlide>Slide 4</SwiperSlide>
+        <SwiperSlide>Slide 5</SwiperSlide>
+        <SwiperSlide>Slide 6</SwiperSlide>
+        <SwiperSlide>Slide 7</SwiperSlide>
+        <SwiperSlide>Slide 8</SwiperSlide>
+        <SwiperSlide>Slide 9</SwiperSlide>
+      </Swiper>
     </Page>
   );
 };
