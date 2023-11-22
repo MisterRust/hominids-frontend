@@ -3,8 +3,9 @@ import { H4, H6 } from "styles";
 
 // Declared first to be used in next component
 const CardImage = styled.img`
-  width: 285px;
+  width: 100%;
   height: 292px;
+  border-radius: 24px;
   /* flex-shrink: 0; */
   /* transition: all 0.2s ease-in-out; */
   /* @media (max-width: 768px) {
@@ -15,12 +16,12 @@ const CardImage = styled.img`
 
 const CardContainer = styled.div`
   display: flex;
-  /* height: 604px; */
+  width: 24%;
   /* max-width: 454px; */
   padding: 28px;
   flex-direction: column;
   align-items: left;
-  gap: 20px;
+  /* gap: 20px; */
   border-radius: 40px;
   border: 3px solid #5d3068;
   background: rgba(184, 128, 255, 0.04);
@@ -33,9 +34,19 @@ const CardContainer = styled.div`
       transform: scale(1.05);
     }
   } */
-  @media (max-width: 768px) {
+  @media (max-width: 1234px) {
     padding: 16px;
-    /* width: 297px; */
+    width: 32%;
+    /* height: 410px; */
+  }
+  @media (max-width: 895px) {
+    padding: 16px;
+    width: 48.5%;
+    /* height: 410px; */
+  }
+  @media (max-width: 660px) {
+    padding: 16px;
+    width: 100%;
     /* height: 410px; */
   }
 `;
@@ -44,7 +55,8 @@ const ImageBox = styled.div`
   /* width: 100%; */
   /* height: 400px; */
   /* overflow: hidden; */
-  /* border-radius: 24px; */
+  border-radius: 24px;
+  margin: auto;
   /* @media (max-width: 768px) {
     height: 265px;
     width: 100%;
@@ -57,7 +69,10 @@ const ToolBox = styled.div`
   justify-content: space-between;
   align-items: center;
   @media (max-width: 768px) {
-    width: 265px;
+    /* width: 265px; */
+  justify-content: space-around;
+  width: 100%;
+
   }
 `;
 
@@ -72,7 +87,7 @@ const CurrentStatus = styled.div`
 const MintButton = styled.div`
   display: flex;
   padding: 16px 24px;
-  justify-content: ju;
+  /* justify-content: sp; */
   align-items: center;
   gap: 10px;
   border-radius: 100px;
