@@ -11,7 +11,6 @@ const Container = styled.div`
     /* transform: scale(0.5);
     margin: -25px; */
     flex-direction: column;
-    justify-content: center;
     margin: 12px 0;
   }
 `;
@@ -29,7 +28,7 @@ const Number = styled.div`
     font-size: 8.956px;
     font-style: normal;
     font-weight: 400;
-    line-height: 140%;
+    line-height: 140%; /* 12.539px */
   }
 `;
 
@@ -73,7 +72,7 @@ const UpperText = styled.div`
     font-size: 8.956px;
     font-style: normal;
     font-weight: 400;
-    line-height: 140%; 
+    line-height: 140%; /* 12.539px */
   }
 `;
 
@@ -90,7 +89,7 @@ const Balance = styled.div`
     font-size: 8.956px;
     font-style: normal;
     font-weight: 400;
-    line-height: 140%; 
+    line-height: 140%; /* 12.539px */
   }
 `;
 

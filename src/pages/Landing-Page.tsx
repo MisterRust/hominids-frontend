@@ -131,14 +131,7 @@ const ButtonBox = styled.div`
   justify-content: center;
   margin: 60px 0;
   flex-wrap: wrap;
-  padding: 0 20px;
-  width: 100%;
-  @media (max-width: 768px) {
-    overflow-x: scroll;
-    /* display: flex; */
-    flex-wrap: nowrap;
-    justify-content: start;
-  }`
+`;
 
 const CardBox = styled.div`
   display: flex;
@@ -150,9 +143,7 @@ const CardBox = styled.div`
   gap: 36px;
   @media (max-width: 768px) {
     flex-wrap: nowrap;
-    overflow-x: scroll;
-    justify-content: start;
-    padding: 0 20px;
+    overflow: hidden;
   }
 `;
 
@@ -197,8 +188,7 @@ const LongTabButton = styled(StyleMain)`
 const NftBox = styled.div`
   margin-top: 100px;
   width: 100%;
-  /* padding-right: 120px; */
-  margin: 100px 0 100px 0;
+  padding: 0 30px;
   @media (max-width: 768px) {
     margin-top: 0;
     margin-bottom: -140px;
@@ -212,10 +202,10 @@ const NftContainer = styled.div`
   flex-wrap: wrap;
   margin: 0 auto;
   max-width: 1500px;
+  padding: 0 30px;
   @media (max-width: 768px) {
     flex-wrap: nowrap;
-    overflow-x: scroll;
-    justify-content: start;
+    overflow: hidden;
   }
 `;
 
@@ -415,8 +405,7 @@ const ListsContainer = styled.div`
 `;
 
 const FullDivBox = styled.div`
-  margin-right: auto;
-  margin-left: auto;
+  margin-left: 10%;
   width: 80%;
   margin-bottom: 400px;
   @media (max-width: 768px) {
@@ -448,7 +437,7 @@ const InputContainer = styled.div`
 `;
 
 const Bg = styled.div`
-  width: 100%;
+  width: 1600px;
   height: 900px;
   background-image: url(${(props) => decoImg});
   background-repeat: no-repeat;
@@ -459,7 +448,7 @@ const Bg = styled.div`
   transform: translate(-50%, -50%);
   z-index: -1;
   @media (max-width: 768px) {
-    width: 100%;
+    width: 930px;
     height: 500px;
   }
 `;
@@ -596,7 +585,7 @@ export default function LandingPage() {
   return (
     <StyleLanding>
       <BackgroundEffect />
-      {/* <LandingpageBanner /> */}
+      <LandingpageBanner />
       <IntroText>
         <Heading $color="white" $weight={900} $style={"Black"} $align="center">
           Explore our&nbsp;marketplace

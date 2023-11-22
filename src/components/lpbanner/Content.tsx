@@ -10,7 +10,7 @@ import { GradientButton } from "components/buttons";
 import { H1, H2, H4, H5, Span } from "styles";
 
 const StyleMain = styled.div`
-  padding-left: 125px;
+  padding-left: 80px;
   position: relative;
   z-index: 2;
   /* position: absolute;
@@ -52,7 +52,7 @@ const StyleMainGroup = styled.div`
 const StyleBody = styled.div`
   width: 100%;
   position: relative;
-  padding: 110px 0 120px;
+  padding: 105px 0 120px;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -64,7 +64,7 @@ const StyleH3 = styled(H5)`
 
 const StyleBannerImg = styled.img`
   position: absolute;
-  bottom: 20px;
+  bottom: 0;
   right: 0;
 `;
 
@@ -72,7 +72,6 @@ const StyleFooter = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-left: 10px;
 `;
 
 const StyleInfoGroup = styled.div`
@@ -144,7 +143,7 @@ export const Content = () => {
         <StyleBannerImg src={banner} />
       </StyleBody>
       <StyleFooter>
-        <GradientButton title="VIEW MARKET" width={257} height={86} radius = {32} />
+        <GradientButton title="VIEW MARKET" width={257} height={86} />
         <StyleInfoGroup>
           <StyleInfoItem>
             <H2 $color="white" $weight={900}>
