@@ -39,37 +39,37 @@ import cardImg from "../../assets/cards/card_avatar.png";
 const CARDS = [
     {
         cardBgImg: cardImg,
-        cardname: 'Hope by Maryanne',
+        cardname: 'Hope by Maryanne Chisholm',
         sui: 1672,
     },
     {
         cardBgImg: cardImg,
-        cardname: 'Hope by Maryanne',
+        cardname: 'Hope by Maryanne Chisholm',
         sui: 1672,
     },
     {
         cardBgImg: cardImg,
-        cardname: 'Hope by Maryanne',
+        cardname: 'Hope by Maryanne Chisholm',
         sui: 1672,
     },
     {
         cardBgImg: cardImg,
-        cardname: 'Hope by Maryanne',
+        cardname: 'Hope by Maryanne Chisholm',
         sui: 1672,
     },
     {
         cardBgImg: cardImg,
-        cardname: 'Hope by Maryanne',
+        cardname: 'Hope by Maryanne Chisholm',
         sui: 1672,
     },
     {
         cardBgImg: cardImg,
-        cardname: 'Hope by Maryanne',
+        cardname: 'Hope by Maryanne Chisholm',
         sui: 1672,
     },
     {
         cardBgImg: cardImg,
-        cardname: 'Hope by Maryanne',
+        cardname: 'Hope by Maryanne Chisholm',
         sui: 1672,
     },
 ];
@@ -80,12 +80,11 @@ const Minting = () => {
             <HeaderContainer>
                 <Header />
             </HeaderContainer>
-
             <PageNav>
                 <FontStyle $size={20}>
                     Main
                 </FontStyle>
-                <img src="/images/icons/Vector4587.svg" alt="" />
+                <img src="/images/icons/Vector4587.svg" style={{borderRadius: '24px'}} alt="" />
                 <FontStyle $size={16}>
                     Minting
                 </FontStyle>
@@ -101,7 +100,6 @@ const Minting = () => {
                             </BubbleButton>
                             <HeroDescription>
                                 Discover the world of Hominids with us, enjoying unique NFT
-                                <br />
                                 images. Become the owner of one of the masterpieces!
                             </HeroDescription>
                         </CarusolLeft>
@@ -126,7 +124,6 @@ const Minting = () => {
                     </Carusol>
                 </SwiperSlide>
             </Swiper>
-
             <MainPage>
                 <div style={{ display: 'flex', gap: '5px' }}>
                     <CommonActiveButton>
@@ -149,6 +146,7 @@ const Minting = () => {
                         </CardBox>
                     </MainContent>
             </MainPage>
+
         </Page>
     )
 }

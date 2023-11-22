@@ -6,6 +6,7 @@ const StyleMain = styled.div`
   width: 1440px;
   position: relative;
   z-index: 2;
+  margin: auto;
 `;
 
 export const LandingpageBanner = () => {

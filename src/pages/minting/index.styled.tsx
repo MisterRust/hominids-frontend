@@ -10,7 +10,7 @@ export const Page = styled.div`
     color: white;
 `
 export const HeaderContainer = styled.div`
-    margin-left: 80px;
+    /* margin-left: 80px; */
 `
 
 export const PageNav = styled.div`
@@ -41,6 +41,12 @@ export const Carusol = styled.div`
     padding: 32px 104px;
     display: flex;
     justify-content: space-between;
+    @media (max-width: 768px) {
+      /* flex-wrap: nowrap; */
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
 `
 
 export const CarusolLeft = styled.div`
@@ -49,6 +55,11 @@ export const CarusolLeft = styled.div`
     justify-content: end;
     height: 100%;
     gap: 15px;
+    @media (max-width: 768px) {
+      /* flex-wrap: nowrap; */
+      justify-content: center;
+      align-items: center;
+    }
 `
 export const CarusolRight = styled.div`
     display: flex;
@@ -57,6 +68,11 @@ export const CarusolRight = styled.div`
     justify-content: end;
     height: 100%;
     gap: 15px;
+    @media (max-width: 768px) {
+      /* flex-wrap: nowrap; */
+      justify-content: center;
+      align-items: center;
+    }
 `
 
 export const CarusolTitle = styled.h1`
@@ -95,6 +111,11 @@ export const HeroDescription = styled.h3`
     font-family: Lato;
     font-weight: 400;
     word-wrap: break-word;
+    max-width: 446px;
+    @media (max-width: 768px) {
+      /* flex-wrap: nowrap; */
+      text-align: center;
+    }
 `
 
 export const HeroRightButton = styled.button`
@@ -120,8 +141,9 @@ export const MainPage = styled.div`
     padding-top: 66px;
     gap: 32px;
     flex-direction: column;
-    padding-left: 20px;
-    padding-right: 20px;
+    margin-bottom: 200px;
+    /* padding-left: 20px; */
+    /* padding-right: 20px; */
 `
 export const CommonActiveButton = styled.button`
     // Active&upcoming
@@ -165,7 +187,7 @@ export const CardBox = styled.div`
   /* align-items: start; */
   gap: 16px;
   @media (max-width: 768px) {
-      flex-wrap: nowrap;
+      /* flex-wrap: nowrap; */
       overflow-x: scroll;
       padding: 0 20px;
   }
