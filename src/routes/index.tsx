@@ -15,7 +15,6 @@ const MainRouter = () => {
         <Route path="/test" element={<Test />} />
         <Route path="/explore" element={<Explore />} />
         <Route path="/minting" element={<Minting />} />
-        <Route path="/explore" element={<Explore />} />
         <Route
           path="/auction"
           element={
