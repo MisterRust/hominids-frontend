@@ -1,6 +1,6 @@
 import Header from "components/layout/header";
 import styled from "styled-components";
-import { H1, H2, H6 } from "styles";
+import { H1, H6 } from "styles";
 import AuctionBox from "components/Auction";
 import { Card } from "components/cards";
 import userImg from "../../assets/cards/user_avatar.png";
