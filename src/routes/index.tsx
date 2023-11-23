@@ -3,11 +3,11 @@ import MainLayout from "components/layout";
 import LandingPage from "pages/Landing-Page";
 import Test from "pages/Test";
 import Explore from "pages/explore";
-import Minting from "pages/minting/MintingWFC";
+import Minting from "pages/minting-wfc/MintingWFC";
 import Auction from "pages/auction";
 // import Home from "pages/home";
 import Collections from "pages/collections";
-import MintingWFC from "pages/minting/MintingWFC";
+import MintingWFC from "pages/minting-wfc/MintingWFC";
 
 const MainRouter = () => {
   return (
@@ -16,6 +16,7 @@ const MainRouter = () => {
         <Route path="/" element={<LandingPage />} />
         <Route path="/test" element={<Test />} />
         <Route path="/explore" element={<Explore />} />
+        <Route path="/minting-wfc" element={<MintingWFC />} />
         <Route path="/minting" element={<Minting />} />
         <Route
           path="/auction"
@@ -31,7 +32,6 @@ const MainRouter = () => {
           }
         />
         <Route path="/collections" element={<Collections />} />
-        <Route path="/minting-wfc" element={<MintingWFC />} />
       </Route>
     </Routes>
   );

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import { useWindowSize } from "hooks/useWindowSizes";
-import { H1, H2, H6 } from "styles";
+import { H2, H6 } from "styles";
 import userImg from "../assets/cards/user_avatar.png";
 import cardImg from "../assets/cards/card_avatar.png";
 import { StyleMain } from "./buttons";
@@ -221,7 +221,7 @@ const CustomSpan = styled.span`
 const ButtonLong = styled(StyleMain)<{ $hover: boolean; $active: boolean }>`
   width: 100%;
   background-color: #af50bd;
-  &: active {
+  &:active {
     background-color: #af50bd30;
   }
   @media (max-width: 500px) {
