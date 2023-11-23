@@ -49,7 +49,7 @@ const StyleBackground = styled.div`
 export const Background = () => {
   return (
     <StyleMain>
-      <StyleBackground></StyleBackground>
+      <StyleBackground />
       <FancyGoo />
     </StyleMain>
   );
