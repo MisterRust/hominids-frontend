@@ -21,8 +21,12 @@ import {
     NotiText,
     // TabButton,
     SaveBtn,
-    PartTitle
-    
+    PartTitle,
+    Noti_Child,
+    Hr_image,
+    Ver_image,
+    Hide_part,
+    Noti_1_3
 } from './index.styled';
 import { useState } from "react";
 
@@ -30,11 +34,13 @@ const Setting = () => {
 
     const navigate = useNavigate();
 
-    // const [state, setState] = useState(false);
+    const [state, setState] = useState(false);
 
-    // const handleChange = () => {
-    //     setState(!state)
-    // }
+    const handleChange = () => {
+        setState(!state)
+    }
+
+
 
   return (
     <StyleBody>
@@ -69,33 +75,69 @@ const Setting = () => {
                         Bids
                     </PartTitle>
                     <FirstRow>
+                        <Noti_Child>
+                            <Switch onChange={handleChange} checked={state} height={28} width={56} uncheckedIcon={false} checkedIcon={false} onColor="#AF50BD" />
+                            <LabelNam htmlFor="">When someone bids on one of your items</LabelNam>
+                        </Noti_Child>
+                        <Noti_Child>
+                            <Switch onChange={handleChange} checked={state} height={28} width={56} uncheckedIcon={false} checkedIcon={false} onColor="#AF50BD" />
+                            <LabelNam htmlFor="">The minimum percentage of list price that a bid must be to notify you</LabelNam>
+                        </Noti_Child>
                         <FR_Child>
-                            <LabelNam htmlFor="">Username</LabelNam>
-                            <TabInput type="text" />
-                            <NotiText>Your pofile link homi...</NotiText>
-                        </FR_Child>
-                        <FR_Child>
-                            <LabelNam htmlFor="">Display name</LabelNam>
-                            <TabInput type="text" />
-                        </FR_Child>
-                        <FR_Child>
-                            <LabelNam htmlFor="">Email</LabelNam>
-                            <TabInput type="text" />
-                            <NotiText>Your email for marketplace notifcations</NotiText>
+                            <LabelNam htmlFor="">When someone accepts your bid</LabelNam>
+                            <Noti_Child>
+                                <Switch onChange={handleChange} checked={state} height={28} width={56} uncheckedIcon={false} checkedIcon={false} onColor="#AF50BD" />
+                                <LabelNam htmlFor="">Web</LabelNam>
+                                <Switch onChange={handleChange} checked={state} height={28} width={56} uncheckedIcon={false} checkedIcon={false} onColor="#AF50BD" />
+                                <LabelNam htmlFor="">Email</LabelNam>
+                            </Noti_Child>
                         </FR_Child>
                     </FirstRow>
+                    <Hr_image src="/images/bg/hr_line.svg" alt="" />
                     <FirstRow>
-                        <SC_Child>
-                            <LabelNam htmlFor="">Short bio</LabelNam>
-                            <TabTextArea placeholder="Tell us about yourself in a few words?" />
-                        </SC_Child>
-                        <FR_Child>
-                            <LabelNam htmlFor="" style={{display:'flex', alignItems: 'center', gap: '8px'}}>
-                                Anti-Phishing Code
-                                <img src="/images/icons/free-icon-font-interrogation-39166931.svg" alt="" />
-                             </LabelNam>
-                            <TabInput type="text" />
-                        </FR_Child>
+                        <Noti_1_3>
+                            <PartTitle>
+                                Items sold
+                            </PartTitle>
+                            <FR_Child style={{width: '100%', marginTop: '25px'}}>
+                                <LabelNam htmlFor="">When someone purchases your items</LabelNam>
+                                <Noti_Child>
+                                    <Switch onChange={handleChange} checked={state} height={28} width={56} uncheckedIcon={false} checkedIcon={false} onColor="#AF50BD" />
+                                    <LabelNam htmlFor="">Web</LabelNam>
+                                    <Switch onChange={handleChange} checked={state} height={28} width={56} uncheckedIcon={false} checkedIcon={false} onColor="#AF50BD" />
+                                    <LabelNam htmlFor="">Email</LabelNam>
+                                </Noti_Child>
+                            </FR_Child>
+                        </Noti_1_3>
+                        <Ver_image src="/images/bg/Vector4589.svg" alt="" />
+                        <Hide_part>
+                            <Hr_image src="/images/bg/hr_line.svg" alt="" />
+                        </Hide_part>
+                        <Noti_1_3>
+                            <PartTitle>
+                                Watchlist
+                            </PartTitle>
+                            <FR_Child style={{width: '100%', marginTop: '25px'}}>
+                                <LabelNam htmlFor="">
+                                    When a watchlist you follow has a floor price jump above your set threshold
+                                </LabelNam>
+                                <Noti_Child>
+                                    <Switch onChange={handleChange} checked={state} height={28} width={56} uncheckedIcon={false} checkedIcon={false} onColor="#AF50BD" />
+                                    <LabelNam htmlFor="">Web</LabelNam>
+                                </Noti_Child>
+                            </FR_Child>
+                        </Noti_1_3>
+                        <Noti_1_3>
+                            <FR_Child style={{width: '100%'}}>
+                                <LabelNam htmlFor="">
+                                    When a watchlist you follow has a jump in the number of listings above your set threshold
+                                </LabelNam>
+                                <Noti_Child>
+                                    <Switch onChange={handleChange} checked={state} height={28} width={56} uncheckedIcon={false} checkedIcon={false} onColor="#AF50BD" />
+                                    <LabelNam htmlFor="">Web</LabelNam>
+                                </Noti_Child>
+                            </FR_Child>
+                        </Noti_1_3>
                     </FirstRow>
                     <FirstRow>
                         <SaveBtn>

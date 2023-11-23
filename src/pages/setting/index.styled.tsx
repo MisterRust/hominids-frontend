@@ -143,6 +143,7 @@ export const FR_Child = styled.div`
     width: 32%;
     display: flex;
     flex-direction: column;
+    gap: 10px;
     @media (max-width: 780px){
         width: 100%;
     }
@@ -165,6 +166,7 @@ export const LabelNam = styled.label`
     font-weight: 400;
     line-height: 27px;
     word-wrap: break-word;
+    width: 100%;
 `
 
 export const TabInput = styled.input`
@@ -246,5 +248,44 @@ export const PartTitle = styled.h1`
     font-weight: 600; 
     text-transform: uppercase; 
     line-height: 35.28px;
-    word-wrap: break-word
+    word-wrap: break-word;
+    @media (max-width: 780px){
+        text-align: center;
+    }
 ` 
+
+export const Noti_Child = styled.div`
+    display: flex;
+    gap: 16px;
+    align-items: center;
+`
+
+export const Hr_image = styled.img`
+    width: 100%;
+    margin: 40px 0;
+`
+
+export const Hide_part = styled.div`
+    width: 100%;
+    display: none;
+    @media (max-width: 780px){
+        display: block;
+    }
+`
+
+export const Ver_image = styled.img`
+    max-height: 142px;
+    @media (max-width: 780px){
+        display: none;
+    }
+`
+
+export const Noti_1_3 = styled.div`
+    display: 'flex';
+    gap: '35px';
+    flex-direction: 'column'; 
+    width: '32%';
+    @media (max-width: 780px){
+        width: 100%;
+    }
+`
