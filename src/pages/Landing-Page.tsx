@@ -95,6 +95,7 @@ const SELLERS = [
 
 const StyleLanding = styled.div`
   position: relative;
+  margin-top: 90px;
 `;
 
 const IntroText = styled.div`
@@ -117,7 +118,7 @@ const Heading = styled(H1)`
 const H6WithMargin = styled(H1)`
   font-size: 24px;
   line-height: 32px;
-  padding: 0 15%;
+  /* padding: 0 15%; */
   @media (max-width: 768px) {
     font-size: 16px;
     line-height: 22px;
@@ -126,24 +127,28 @@ const H6WithMargin = styled(H1)`
 
 const ButtonBox = styled.div`
   display: flex;
-  align-items: flex-start;
+  /* align-items: flex-start; */
   gap: 16px;
-  justify-content: center;
+  /* justify-content: center; */
   margin: 60px 0;
-  flex-wrap: wrap;
+  padding: 0 24px;
+  flex-wrap: nowrap;
+  width: 100%;
+  overflow-x: auto;
 `;
 
 const CardBox = styled.div`
   display: flex;
   width: 100%;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center; */
+  /* align-items: center; */
+  padding: 0 24px;
   gap: 36px;
+  overflow-x: auto;
   @media (max-width: 768px) {
-    flex-wrap: nowrap;
-    overflow: hidden;
+    /* overflow: hidden; */
   }
 `;
 
@@ -154,7 +159,7 @@ const AboutContainer = styled.div`
 const AboutUsBox = styled.div`
   margin: 176px auto;
   max-width: 1500px;
-  padding: 0 30px;
+  /* padding: 0 30px; */
   @media (max-width: 768px) {
     margin-top: 80px;
     margin-bottom: 80px;
@@ -162,19 +167,25 @@ const AboutUsBox = styled.div`
 `;
 
 const CollectionTextBox = styled.div`
-  max-width: 1500px;
-  padding: 0 30px;
+  max-width: 1440px;
+  /* padding: 0 30px; */
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 0 auto;
+  flex-wrap: nowrap;
+  /* justify-content: space-between; */
+  /* margin: 0 auto; */
+  width: 100%;
+  /* padding: 0 24px; */
+  overflow-x: auto;
 `;
 
 const Button2Box = styled.div`
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   max-width: 562px;
   margin: 0 20px;
+  width: 100%;
+  flex-wrap: nowrap;
+  overflow-x: auto;
   @media (max-width: 768px) {
     display: none;
   }
@@ -188,7 +199,7 @@ const LongTabButton = styled(StyleMain)`
 const NftBox = styled.div`
   margin-top: 100px;
   width: 100%;
-  padding: 0 30px;
+  /* padding: 0 24px; */
   @media (max-width: 768px) {
     margin-top: 0;
     margin-bottom: -140px;
@@ -200,12 +211,14 @@ const NftContainer = styled.div`
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 0 auto;
-  max-width: 1500px;
-  padding: 0 30px;
+  /* margin: 0 auto; */
+  max-width: 1440px;
+  /* padding: 0 24px; */
   @media (max-width: 768px) {
     flex-wrap: nowrap;
-    overflow: hidden;
+    overflow-x: auto;
+    justify-content: start;
+
   }
 `;
 
@@ -333,6 +346,7 @@ const Texts = styled.div`
 const AnotherH6 = styled(H4)`
   width: 100%;
   padding: 0 10%;
+  text-align: center;
 `;
 
 const H1HideMargin = styled(H1)`
@@ -437,7 +451,7 @@ const InputContainer = styled.div`
 `;
 
 const Bg = styled.div`
-  width: 1600px;
+  width: 100%;
   height: 900px;
   background-image: url(${(props) => decoImg});
   background-repeat: no-repeat;
@@ -447,10 +461,6 @@ const Bg = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: -1;
-  @media (max-width: 768px) {
-    width: 930px;
-    height: 500px;
-  }
 `;
 
 const UpperPart = styled.div`
@@ -584,7 +594,7 @@ const H4WithWidth = styled.div`
 export default function LandingPage() {
   return (
     <StyleLanding>
-      <BackgroundEffect />
+      {/* <BackgroundEffect /> */}
       <LandingpageBanner />
       <IntroText>
         <Heading $color="white" $weight={900} $style={"Black"} $align="center">
@@ -737,7 +747,8 @@ export default function LandingPage() {
               NFTs at the hottest prices
             </AnotherH6>
           </Texts>
-          <CardBox>
+        </SellerBox>
+        <CardBox>
             {CARDS.map((card, index) => (
               <Card
                 key={index}
@@ -752,7 +763,6 @@ export default function LandingPage() {
           <H1HideMargin $color="white" $weight={900} $align="center">
             Our Partners
           </H1HideMargin>
-        </SellerBox>
       </SellerContainer>
       <Container>
         <PartnersContainer>

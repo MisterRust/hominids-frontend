@@ -3,7 +3,7 @@ import { Background } from "./Background";
 import { Content } from "./Content";
 
 const StyleMain = styled.div`
-  width: 1440px;
+  max-width: 1440px;
   position: relative;
   z-index: 2;
   margin: auto;
