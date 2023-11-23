@@ -194,6 +194,10 @@ const OverflowBox = styled.div`
   }
 `;
 
+const CustomDiv = styled.div`
+  margin: 0 20px;
+`;
+
 export default function Auction({
   name,
   current,
@@ -251,14 +255,16 @@ export default function Auction({
         <Space $height={85} $mdH={25} />
         <OverflowBox>
           {CARDS.map((card, index) => (
-            <Card
-              key={index}
-              userImg={card.userImg}
-              cardBgImg={card.cardImg}
-              mint={card.mint}
-              name={card.name}
-              timeRemained={card.remained}
-            />
+            <CustomDiv>
+              <Card
+                key={index}
+                userImg={card.userImg}
+                cardBgImg={card.cardImg}
+                mint={card.mint}
+                name={card.name}
+                timeRemained={card.remained}
+              />
+            </CustomDiv>
           ))}
         </OverflowBox>
       </Container>
