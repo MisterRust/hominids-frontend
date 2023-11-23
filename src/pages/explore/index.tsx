@@ -5,13 +5,15 @@ import { H6, H1 } from "styles";
 import { NftCard } from "components/cards";
 import nftImg from "../../assets/cards/nft_avatar.png";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
+import { Pagination, EffectCoverflow } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
 const AVATARS = [1, 2, 3, 4, 5, 6, 7];
 const Page = styled.div`
   padding: 110px 0;
+  margin: auto;
+  width: 100%;
 `;
 
 const FullWidthDiv = styled.div`
@@ -19,12 +21,15 @@ const FullWidthDiv = styled.div`
 `;
 
 const Container = styled.div`
-  max-width: 1500px;
+  max-width: 1440px;
   padding: 0 30px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 768px){
+    flex-direction: column;
+  }
 `;
 
 const FlexBox = styled.div`
@@ -43,13 +48,39 @@ const Space = styled.div<{ $height: number }>`
 `;
 
 const NftBox = styled.div`
-  width: 90%;
-  margin: 50px 5%;
+  /* width: 90%; */
+  margin: 50px auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-direction: row;
-  overflow: hidden;
+  overflow: auto;
+  margin-left: auto;
+  margin-right: auto;
 `;
+
+const TitleStyle = styled.span`
+  font-family: 'Black Han Sans';
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 80px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: white;
+  @media (max-width: 768px){
+    font-family: 'Lato';
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 39px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+`
+
+const SlideBtn = styled.div`
+  @media (max-width: 768px){
+    display: none;
+  }
+`
 
 const Explore = () => {
   return (
@@ -73,57 +104,45 @@ const Explore = () => {
       <Space $height={50} />
       <FullWidthDiv>
         <Container>
-          <H1 $color="white" $weight={900}>
+          <TitleStyle>
             EXPLORE OUR MARKETPLACE
-          </H1>
+          </TitleStyle>
         </Container>
       </FullWidthDiv>
       <Space $height={30} />
       <FullWidthDiv>
         <Container>
-          <H6 $color="white" $weight={200}>
-            Explore Trending Collections
+          <H6 $color="white" $weight={200} $align="center">
+              Explore Trending Collections
           </H6>
-          <ControlButton currInd={3} total={19} />
+          <SlideBtn>
+            <ControlButton currInd={3} total={19} />
+          </SlideBtn>
         </Container>
       </FullWidthDiv>
-      {/* <Swiper slidesPerView={'auto'} spaceBetween={36} className="mySwiper">
-        {collections.map((collection, key) => (
-          <SwiperSlide key={key}>
-            <CollectionItem
-              collection={{
-                id: collection.collection_address,
-                name: collection.name,
-                image: collection.logo,
-              }}
+      <Swiper 
+          slidesPerView={'auto'} spaceBetween={36} className="mySwiper">
+        {AVATARS.map((avatar, key) => {
+          return (
+          <SwiperSlide key={key} style={{flexShrink:'1'}}>
+            <NftCard
+              key={avatar}
+              items={1483}
+              floorPrice={1672}
+              volume={2000}
+              avatar={nftImg}
             />
-          </SwiperSlide>
-        ))}
-      </Swiper> */}
-      <NftBox>
-        <Swiper slidesPerView={'auto'} spaceBetween={36} className="mySwiper" slidesPerView={3}>
-          {AVATARS.map((avatar, key) => {
-            return (
-            <SwiperSlide key={key}>
-              <NftCard
-                key={avatar}
-                items={1483}
-                floorPrice={1672}
-                volume={2000}
-                avatar={nftImg}
-              />
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
-      </NftBox>
+            </SwiperSlide>
+          );
+        })}
+      </Swiper>
       
       <Space $height={50} />
       <FullWidthDiv>
         <Container>
-          <H1 $color="white" $weight={900}>
+          <TitleStyle>
             LATEST DROPS
-          </H1>
+          </TitleStyle>
         </Container>
       </FullWidthDiv>
       <Space $height={30} />
@@ -132,12 +151,16 @@ const Explore = () => {
           <H6 $color="white" $weight={200}>
             Explore Latest Drops
           </H6>
-          <ControlButton currInd={3} total={19} />
+          <SlideBtn>
+            <ControlButton currInd={3} total={19} />
+          </SlideBtn>
         </Container>
       </FullWidthDiv>
-      <NftBox>
-        {AVATARS.map((avatar) => {
+      <Swiper 
+          slidesPerView={'auto'} spaceBetween={36} className="mySwiper">
+        {AVATARS.map((avatar, key) => {
           return (
+          <SwiperSlide key={key} style={{flexShrink:'1'}}>
             <NftCard
               key={avatar}
               items={1483}
@@ -145,15 +168,16 @@ const Explore = () => {
               volume={2000}
               avatar={nftImg}
             />
+            </SwiperSlide>
           );
         })}
-      </NftBox>
+      </Swiper>
       <Space $height={50} />
       <FullWidthDiv>
         <Container>
-          <H1 $color="white" $weight={900}>
+          <TitleStyle>
             GAMING COLLECTION
-          </H1>
+          </TitleStyle>
         </Container>
       </FullWidthDiv>
       <Space $height={30} />
@@ -162,12 +186,16 @@ const Explore = () => {
           <H6 $color="white" $weight={200}>
             Explore Gaming Collections
           </H6>
-          <ControlButton currInd={3} total={19} />
+          <SlideBtn>
+            <ControlButton currInd={3} total={19} />
+          </SlideBtn>
         </Container>
       </FullWidthDiv>
-      <NftBox>
-        {AVATARS.map((avatar) => {
+      <Swiper 
+          slidesPerView={'auto'} spaceBetween={36} className="mySwiper">
+        {AVATARS.map((avatar, key) => {
           return (
+          <SwiperSlide key={key} style={{flexShrink:'1'}}>
             <NftCard
               key={avatar}
               items={1483}
@@ -175,25 +203,9 @@ const Explore = () => {
               volume={2000}
               avatar={nftImg}
             />
+            </SwiperSlide>
           );
         })}
-      </NftBox>
-      <Swiper
-        slidesPerView={3}
-        spaceBetween={30}
-        
-        className="mySwiper"
-        style={{color: 'white'}}
-      >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
       </Swiper>
     </Page>
   );
