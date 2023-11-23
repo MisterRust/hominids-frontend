@@ -30,7 +30,7 @@ const Box = styled.div`
     height: 420px;
   }
   @media (max-width: 768px) {
-    height: 650px;
+    height: 642px;
     width: 327px;
     padding: 60px 30px;
     overflow: hidden;
@@ -124,7 +124,6 @@ const Avatar = styled.img`
     width: 327px;
     height: 300px;
     border-radius: 150px;
-    margin-top: 15px;
   }
 `;
 
