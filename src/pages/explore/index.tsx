@@ -34,7 +34,7 @@ const TextBox = styled.div`
   justify-content: space-between;
 `;
 
-const Space = styled.div`
+const Space = styled.div<{ $height: number }>`
   height: ${(props) => props.$height}px;
   width: 100%;
 `;

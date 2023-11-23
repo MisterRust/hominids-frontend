@@ -3,7 +3,7 @@ export default function FancyGoo() {
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
       <defs>
         <filter id="fancy-goo">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="20" result="blur" />
+          <feGaussianBlur in="SourceGraphic" stdDeviation="35" result="blur" />
           <feColorMatrix
             in="blur"
             mode="matrix"
