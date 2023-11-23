@@ -16,6 +16,13 @@ import cardImg from "../assets/cards/card_avatar.png";
 import userImg from "../assets/cards/user_avatar.png";
 import decoImg from "../assets/bg.png";
 
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+
 const BUTTONS = [
   "All",
   "Title",
@@ -96,6 +103,8 @@ const SELLERS = [
 const StyleLanding = styled.div`
   position: relative;
   margin-top: 90px;
+  max-width: 1440px;
+  margin: auto;
 `;
 
 const IntroText = styled.div`
@@ -129,10 +138,10 @@ const ButtonBox = styled.div`
   display: flex;
   /* align-items: flex-start; */
   gap: 16px;
-  /* justify-content: center; */
+  justify-content: center;
   margin: 60px 0;
   padding: 0 24px;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   width: 100%;
   overflow-x: auto;
 `;
@@ -154,11 +163,12 @@ const CardBox = styled.div`
 
 const AboutContainer = styled.div`
   width: 100%;
+  margin: auto;
 `;
 
 const AboutUsBox = styled.div`
   margin: 176px auto;
-  max-width: 1500px;
+  max-width: 1440px;
   /* padding: 0 30px; */
   @media (max-width: 768px) {
     margin-top: 80px;
@@ -171,6 +181,7 @@ const CollectionTextBox = styled.div`
   /* padding: 0 30px; */
   display: flex;
   flex-wrap: nowrap;
+  margin: auto;
   /* justify-content: space-between; */
   /* margin: 0 auto; */
   width: 100%;
@@ -596,6 +607,7 @@ export default function LandingPage() {
     <StyleLanding>
       {/* <BackgroundEffect /> */}
       <LandingpageBanner />
+
       <IntroText>
         <Heading $color="white" $weight={900} $style={"Black"} $align="center">
           Explore our&nbsp;marketplace
@@ -612,16 +624,20 @@ export default function LandingPage() {
         ))}
       </ButtonBox>
       <CardBox>
-        {CARDS.map((card, index) => (
-          <Card
-            key={index}
-            userImg={card.userImg}
-            cardBgImg={card.cardImg}
-            mint={card.mint}
-            name={card.name}
-            timeRemained={card.remained}
-          />
-        ))}
+        <Swiper slidesPerView={'auto'} spaceBetween={36} className="mySwiper">
+          {CARDS.map((card, index) => (
+            <SwiperSlide key={index} style={{ flexShrink: '1' }}>
+              <Card
+                key={index}
+                userImg={card.userImg}
+                cardBgImg={card.cardImg}
+                mint={card.mint}
+                name={card.name}
+                timeRemained={card.remained}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </CardBox>
       <AboutUsBox>
         <AboutUs />
@@ -675,15 +691,20 @@ export default function LandingPage() {
       </AboutContainer>
       <NftBox>
         <NftContainer>
+        <Swiper slidesPerView={'auto'} spaceBetween={36} className="mySwiper">
           {NFTS.map((nft, index) => (
-            <NftCard
-              key={index}
-              items={nft.items}
-              floorPrice={nft.floorPrice}
-              volume={nft.volume}
-              avatar={nft.avatar}
-            ></NftCard>
+            <SwiperSlide key={index} style={{ flexShrink: '1' }}>
+
+              <NftCard
+                key={index}
+                items={nft.items}
+                floorPrice={nft.floorPrice}
+                volume={nft.volume}
+                avatar={nft.avatar}
+              ></NftCard>
+            </SwiperSlide>
           ))}
+          </Swiper>
         </NftContainer>
       </NftBox>
       <SellerContainer>
@@ -749,16 +770,19 @@ export default function LandingPage() {
           </Texts>
         </SellerBox>
         <CardBox>
+          <Swiper slidesPerView={'auto'} spaceBetween={36} className="mySwiper">
             {CARDS.map((card, index) => (
-              <Card
-                key={index}
-                userImg={card.userImg}
-                cardBgImg={card.cardImg}
-                mint={card.mint}
-                name={card.name}
-                timeRemained={card.remained}
-              />
+              <SwiperSlide key={index} style={{ flexShrink: '1' }}>
+                <Card
+                  userImg={card.userImg}
+                  cardBgImg={card.cardImg}
+                  mint={card.mint}
+                  name={card.name}
+                  timeRemained={card.remained}
+                />
+              </SwiperSlide>
             ))}
+          </Swiper>
           </CardBox>
           <H1HideMargin $color="white" $weight={900} $align="center">
             Our Partners
