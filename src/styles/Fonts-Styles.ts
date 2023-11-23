@@ -13,7 +13,7 @@ interface SpanProps {
 
 export const H1 = styled.h1<FontProps>`
   font-size: 64px;
-  line-height: 78px;
+  line-height: 90px;
   font-weight: ${(props) => props.$weight};
   color: ${(props) => props.$color};
   font-family: ${(props) =>
