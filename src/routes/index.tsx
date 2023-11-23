@@ -7,6 +7,9 @@ import Auction from "pages/auction";
 // import Home from "pages/home";
 import Collections from "pages/collections";
 import MintingWFC from "pages/minting-wfc/MintingWFC";
+import SettingProfile from "pages/setting/profile";
+import SettingNotification from "pages/setting/notification";
+import SettingDisplay from "pages/setting/display";
 
 const MainRouter = () => {
   return (
@@ -30,6 +33,9 @@ const MainRouter = () => {
           }
         />
         <Route path="/collections" element={<Collections />} />
+        <Route path="/settings" element={<SettingProfile />} />
+        <Route path="/settings/notification" element={<SettingNotification />} />
+        <Route path="/settings/display" element={<SettingDisplay />} />
       </Route>
     </Routes>
   );
