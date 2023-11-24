@@ -12,6 +12,7 @@ import SettingNotification from "pages/setting/notification";
 import SettingDisplay from "pages/setting/display";
 import Staking from "pages/staking/staking";
 import Staking_hominid from "pages/staking/staking_hominid";
+import Airdrop from "pages/airdrop";
 
 const MainRouter = () => {
   return (
@@ -40,6 +41,7 @@ const MainRouter = () => {
         <Route path="/settings/display" element={<SettingDisplay />} />
         <Route path="/staking" element={<Staking />} />
         <Route path="/staking/hominid" element={<Staking_hominid />} />
+        <Route path="/airdrop" element={<Airdrop />} />
       </Route>
     </Routes>
   );

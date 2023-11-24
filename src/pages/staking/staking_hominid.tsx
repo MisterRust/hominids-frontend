@@ -42,12 +42,12 @@ const Staking_hominid = () => {
             </FontStyle>
             <img src="/images/icons/Vector4587.svg" style={{borderRadius: '24px'}} alt="" />
             <FontStyle style={{fontSize: '16px'}}>
-                Setting
+                NFT_Staking
             </FontStyle>
         </PageNav>
         <PageBody>
             <BodyTitle>
-                Settings
+                Staking
                 <CommonText style={{marginTop: '24px'}}>Earn SHOMI tokens staking your Nfts</CommonText>
             </BodyTitle>
 
