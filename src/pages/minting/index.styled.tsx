@@ -25,7 +25,6 @@ export const PageNav = styled.div`
 
 export const FontStyle = styled.h2`
     color: white;
-    font-size: ${(props) => props.$size}px;
     font-family: Lato;
     font-weight: 400;
     text-transform: uppercase;

@@ -7,6 +7,12 @@ import Auction from "pages/auction";
 // import Home from "pages/home";
 import Collections from "pages/collections";
 import MintingWFC from "pages/minting-wfc/MintingWFC";
+import SettingProfile from "pages/setting/profile";
+import SettingNotification from "pages/setting/notification";
+import SettingDisplay from "pages/setting/display";
+import Staking from "pages/staking/staking";
+import Staking_hominid from "pages/staking/staking_hominid";
+import Airdrop from "pages/airdrop";
 import Profile from "pages/profile/Profile";
 
 const MainRouter = () => {
@@ -31,6 +37,12 @@ const MainRouter = () => {
           }
         />
         <Route path="/collections" element={<Collections />} />
+        <Route path="/settings" element={<SettingProfile />} />
+        <Route path="/settings/notification" element={<SettingNotification />} />
+        <Route path="/settings/display" element={<SettingDisplay />} />
+        <Route path="/staking" element={<Staking />} />
+        <Route path="/staking/hominid" element={<Staking_hominid />} />
+        <Route path="/airdrop" element={<Airdrop />} />
         <Route path="/profile" element={<Profile />} />
       </Route>
     </Routes>

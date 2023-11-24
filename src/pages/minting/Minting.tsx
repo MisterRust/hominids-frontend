@@ -81,11 +81,11 @@ const Minting = () => {
                 <Header />
             </HeaderContainer>
             <PageNav>
-                <FontStyle $size={20}>
+                <FontStyle style={{fontSize: '20px'}}>
                     Main
                 </FontStyle>
                 <img src="/images/icons/Vector4587.svg" style={{borderRadius: '24px'}} alt="" />
-                <FontStyle $size={16}>
+                <FontStyle style={{fontSize: '16px'}}>
                     Minting
                 </FontStyle>
             </PageNav>
@@ -125,7 +125,7 @@ const Minting = () => {
                 </SwiperSlide>
             </Swiper>
             <MainPage>
-                <div style={{ display: 'flex', gap: '5px' }}>
+                <div style={{ display: 'flex', gap: '5px', padding: "0 24px" }}>
                     <CommonActiveButton>
                         Active&upcoming
                     </CommonActiveButton>
