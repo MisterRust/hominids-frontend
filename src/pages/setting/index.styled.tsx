@@ -136,14 +136,14 @@ export const FirstRow = styled.div`
     margin-top: 30px;
     @media (max-width: 780px){
         flex-direction: column;
-        gap: 20px;
+        gap: 60px;
     }
 `
 export const FR_Child = styled.div`
     width: 32%;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
     @media (max-width: 780px){
         width: 100%;
     }
@@ -165,8 +165,9 @@ export const LabelNam = styled.label`
     font-family: 'Inter';
     font-weight: 400;
     line-height: 27px;
-    word-wrap: break-word;
     width: 100%;
+    display: inline-block;
+    /* word-break: break-all; */
 `
 
 export const TabInput = styled.input`
@@ -288,4 +289,14 @@ export const Noti_1_3 = styled.div`
     @media (max-width: 780px){
         width: 100%;
     }
+`
+
+export const Text_Style = styled.span`
+    // MoonRank
+    color: white;
+    font-size: 18px;
+    font-family: Lato;
+    font-weight: 500;
+    line-height: 22.68px;
+    word-wrap: break-word
 `

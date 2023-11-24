@@ -13,14 +13,12 @@ import {
     HeaderChild,
     TabBody,
     FirstRow,
-    FR_Child,
-    SC_Child,
     LabelNam,
-    TabInput,
-    TabTextArea,
-    NotiText,
-    TabButton,
-    SaveBtn
+    // TabButton,
+    SaveBtn,
+    PartTitle,
+    Hr_image,
+    Text_Style,
 } from './index.styled';
 import { useState } from "react";
 
@@ -34,94 +32,89 @@ const Setting = () => {
         setState(!state)
     }
 
-  return (
-    <StyleBody>
-        <Header />
-        <PageNav>
-            <FontStyle style={{fontSize: '20px'}}>
-                Main
-            </FontStyle>
-            <img src="/images/icons/Vector4587.svg" style={{borderRadius: '24px'}} alt="" />
-            <FontStyle style={{fontSize: '16px'}}>
-                Setting
-            </FontStyle>
-        </PageNav>
-        <PageBody>
-            <BodyTitle>
-                Settings
-            </BodyTitle>
-            <MainTab3>
-                <TabHeader>
-                    <HeaderChild onClick={() => navigate('/settings')}>
-                        Profile
-                    </HeaderChild>
-                    <HeaderChild onClick={() => navigate('/settings/notification')}>
-                        Notifications
-                    </HeaderChild>
-                    <HeaderChild onClick={() => navigate('/settings/display')}>
-                        Display
-                    </HeaderChild>
-                </TabHeader>
-                <TabBody>
-                    <FirstRow>
-                        <FR_Child>
-                            <LabelNam htmlFor="">Username</LabelNam>
-                            <TabInput type="text" />
-                            <NotiText>Your pofile link homi...</NotiText>
-                        </FR_Child>
-                        <FR_Child>
-                            <LabelNam htmlFor="">Display name</LabelNam>
-                            <TabInput type="text" />
-                        </FR_Child>
-                        <FR_Child>
-                            <LabelNam htmlFor="">Email</LabelNam>
-                            <TabInput type="text" />
-                            <NotiText>Your email for marketplace notifcations</NotiText>
-                        </FR_Child>
-                    </FirstRow>
-                    <FirstRow>
-                        <SC_Child>
-                            <LabelNam htmlFor="">Short bio</LabelNam>
-                            <TabTextArea placeholder="Tell us about yourself in a few words?" />
-                        </SC_Child>
-                        <FR_Child>
-                            <LabelNam htmlFor="" style={{display:'flex', alignItems: 'center', gap: '8px'}}>
-                                Anti-Phishing Code
-                                <img src="/images/icons/free-icon-font-interrogation-39166931.svg" alt="" />
-                             </LabelNam>
-                            <TabInput type="text" />
-                        </FR_Child>
-                    </FirstRow>
-                    <FirstRow>
-                        <FR_Child>
-                            <LabelNam htmlFor="">Short bio</LabelNam>
-                            <TabButton>Link Twitter</TabButton>
-                        </FR_Child>
-                        <FR_Child>
-                            <LabelNam htmlFor="">Short bio</LabelNam>
-                            <TabButton>Link Twitter</TabButton>
-                            <div style={{display: 'flex',  gap: '5px', marginTop: '10px'}}>
-                                <Switch onChange={handleChange} checked={state} height={28} width={56} uncheckedIcon={false} checkedIcon={false} onColor="#AF50BD" />
-                                <NotiText>
-                                    Show Discord
-                                </NotiText>
+
+
+    return (
+        <StyleBody>
+            <Header />
+            <PageNav>
+                <FontStyle style={{ fontSize: '20px' }}>
+                    Main
+                </FontStyle>
+                <img src="/images/icons/Vector4587.svg" style={{ borderRadius: '24px' }} alt="" />
+                <FontStyle style={{ fontSize: '16px' }}>
+                    Setting
+                </FontStyle>
+            </PageNav>
+            <PageBody>
+                <BodyTitle>
+                    Settings
+                </BodyTitle>
+                <MainTab3>
+                    <TabHeader>
+                        <HeaderChild onClick={() => navigate('/settings')}>
+                            Profile
+                        </HeaderChild>
+                        <HeaderChild onClick={() => navigate('/settings/notification')}>
+                            Notifications
+                        </HeaderChild>
+                        <HeaderChild onClick={() => navigate('/settings/display')}>
+                            Display
+                        </HeaderChild>
+                    </TabHeader>
+                    <TabBody>
+                        <FirstRow>
+                            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: '16px' }}>
+                                <PartTitle>
+                                    Fees display
+                                </PartTitle>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                    <Switch onChange={handleChange} checked={state} height={28} width={56} uncheckedIcon={false} checkedIcon={false} onColor="#AF50BD" />
+                                    <LabelNam htmlFor="">
+                                        Inclusive of all fees
+                                    </LabelNam>
+                                    <img src="/images/icons/free-icon-font-interrogation-39166931.svg" alt="" />
+                                </div>
                             </div>
-                        </FR_Child>
-                        <FR_Child>
-                            <LabelNam htmlFor="">Short bio</LabelNam>
-                            <TabButton>Link Twitter</TabButton>
-                        </FR_Child>
-                    </FirstRow>
-                    <FirstRow>
-                        <SaveBtn>
-                            Save settings
-                        </SaveBtn>
-                    </FirstRow>
-                </TabBody>
-            </MainTab3>
-        </PageBody>
-    </StyleBody>
-  )
+                            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: '16px' }}>
+                                <PartTitle>
+                                    Marketplace Logo Display
+                                </PartTitle>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                    <Switch onChange={handleChange} checked={state} height={28} width={56} uncheckedIcon={false} checkedIcon={false} onColor="#AF50BD" />
+                                    <LabelNam htmlFor="">
+                                        Show marketplace logos
+                                    </LabelNam>
+                                </div>
+                            </div>
+                            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: '16px' }}>
+                                <PartTitle>
+                                    Rarity Source
+                                </PartTitle>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', justifyContent: 'space-between' }}>
+                                    <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                        <input type="radio" id="MoonRank" name="rarity" checked />
+                                        <LabelNam htmlFor="#MoonRank">MoonRank</LabelNam>
+                                    </div>
+                                    <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                        <input type="radio" id="HowRare" name="rarity" />
+                                        <LabelNam htmlFor="#HowRare">HowRare</LabelNam>
+                                    </div>
+                                </div>
+                            </div>
+                        </FirstRow>
+                        <Hr_image src="/images/bg/hr_line.svg" alt="" />
+
+                        <FirstRow>
+                            <SaveBtn>
+                                Save settings
+                            </SaveBtn>
+                        </FirstRow>
+                    </TabBody>
+                </MainTab3>
+            </PageBody>
+        </StyleBody>
+    )
 }
 
 export default Setting
