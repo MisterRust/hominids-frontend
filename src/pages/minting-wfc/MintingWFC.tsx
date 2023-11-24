@@ -623,11 +623,11 @@ const horizonLine = (
         y2="0.499949"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#111012" stop-opacity="0" />
-        <stop offset="0.395833" stop-color="#AF50BD" />
-        <stop offset="0.583333" stop-color="#AF50BD" />
-        <stop offset="1" stop-color="#121013" />
-        <stop offset="1" stop-color="#121013" stop-opacity="0" />
+        <stop stopColor="#111012" stopOpacity="0" />
+        <stop offset="0.395833" stopColor="#AF50BD" />
+        <stop offset="0.583333" stopColor="#AF50BD" />
+        <stop offset="1" stopColor="#121013" />
+        <stop offset="1" stopColor="#121013" stopOpacity="0" />
       </linearGradient>
     </defs>
   </SvgHor>
