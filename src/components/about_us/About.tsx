@@ -4,7 +4,7 @@ import avatar from "../../assets/about.png";
 
 const AboutContainer = styled.div`
   display: flex;
-  max-width: 1500px;
+  max-width: 1440px;
   padding: 0 30px;
   margin: 0 auto;
   justify-content: center;
@@ -83,7 +83,7 @@ const AvatarBox = styled.div`
   position: absolute;
   z-index: 1;
   border-radius: 250px;
-  right: 0;
+  right: 30px;
   flex-shrink: 0;
   fill: rgba(184, 128, 255, 0.04);
   strokewidth: 3px;
@@ -97,6 +97,7 @@ const AvatarBox = styled.div`
   }
   @media (max-width: 1000px) {
     backdrop-filter: unset;
+    
   }
   @media (max-width: 768px) {
     visibility: hidden;
@@ -104,6 +105,8 @@ const AvatarBox = styled.div`
     overflow: hidden;
     border-radius: 0;
     bottom: 0;
+    right: 0;
+    
   }
 `;
 
