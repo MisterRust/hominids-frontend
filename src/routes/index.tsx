@@ -13,6 +13,7 @@ import SettingDisplay from "pages/setting/display";
 import Staking from "pages/staking/staking";
 import Staking_hominid from "pages/staking/staking_hominid";
 import Airdrop from "pages/airdrop";
+import Profile from "pages/profile/Profile";
 
 const MainRouter = () => {
   return (
@@ -42,6 +43,7 @@ const MainRouter = () => {
         <Route path="/staking" element={<Staking />} />
         <Route path="/staking/hominid" element={<Staking_hominid />} />
         <Route path="/airdrop" element={<Airdrop />} />
+        <Route path="/profile" element={<Profile />} />
       </Route>
     </Routes>
   );
