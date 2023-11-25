@@ -7,6 +7,7 @@ import Auction from "pages/auction";
 // import Home from "pages/home";
 import Collections from "pages/collections";
 import MintingWFC from "pages/minting-wfc/MintingWFC";
+import Profile from "pages/profile/Profile";
 
 const MainRouter = () => {
   return (
@@ -30,6 +31,7 @@ const MainRouter = () => {
           }
         />
         <Route path="/collections" element={<Collections />} />
+        <Route path="/profile" element={<Profile />} />
       </Route>
     </Routes>
   );
