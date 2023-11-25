@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import gamePad from "../../assets/gamePad.png";
-import { H1, H2 } from "styles";
+import { H2 } from "styles";
 
 export const FullDiv = styled.div`
   width: 100%;

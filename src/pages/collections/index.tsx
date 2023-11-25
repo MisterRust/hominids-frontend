@@ -1,7 +1,6 @@
 // import { CollectionBg } from "components/lpbanner/CollectionBg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { styled } from "styled-components";
-import FancyGoo from "components/svg/Fancy-Goo";
 import Header from "components/layout/header";
 import { H1, H2 } from "styles";
 import userImg from "../../assets/cards/hominids_mark.png";
@@ -83,13 +82,18 @@ const FullDiv = styled.div`
   width: 100%;
 `;
 
-const TblContainer = styled.div`
+const TblContainer = styled.div<{$bg: string}>`
   position: relative;
   max-width: 90vw;
-  height: 100vh;
+  height: 800px;
   margin: 0 auto;
+  background-image: url(${(props) => props.$bg});
+  background-size: 100% 100%;
   @media (min-width: 1500px) {
     max-width: 1440px;
+  }
+  @media (max-width: 780px){
+    background-image: none;
   }
   @media (max-width: 500px) {
     padding: 0 15px;
@@ -104,38 +108,6 @@ const Container = styled.div`
   @media (max-width: 500px) {
     padding: 0 15px;
   }
-`;
-
-const StyleMain = styled.div`
-  filter: url("#fancy-goo");
-  width: 100%;
-  height: 100%;
-  opacity: 0.1;
-  position: absolute;
-  top: 0;
-  z-index: -1;
-  @media (max-width: 768px) {
-    display: none;
-  }
-`;
-
-const CollectionBgStyle = styled.div<{ $reversed: boolean }>`
-  position: relative;
-  width: 100%;
-  height: 100%;
-  -webkit-clip-path: polygon(
-    0 0,
-    45% 0,
-    55% 156px,
-    100% 156px,
-    100% 100%,
-    0 100%
-  );
-  clip-path: polygon(0 0, 45% 0, 55% 15%, 100% 15%, 100% 100%, 0 100%);
-  background: #b880ff;
-  backdrop-filter: blur(30px);
-  border: 3px solid #5d3068;
-  transform: scaleX(${(props) => (props.$reversed ? -1 : 1)});
 `;
 
 const Space = styled.div<{ $height: number; $mdH?: number; $smH?: number }>`
@@ -199,7 +171,7 @@ const MenuBox = styled.div`
 `;
 
 const FlexDiv = styled.div`
-  padding: 0 30px;
+  padding: 20px 30px;
   display: flex;
   justify-content: space-around;
   @media (max-width: 500px) {
@@ -217,29 +189,27 @@ const H2_24 = styled(H2)`
     transform: scale(1.05);
   }
 
-  @media (max-width: 768px) {
-    display: flex;
-    width: 200px;
-    padding: 12px 5%;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    border-radius: 40px;
-    border: 1px solid #5d3068;
-    background: rgba(18, 16, 19, 0.6);
-    box-shadow: 0px 2px 4px 0px rgba(255, 255, 255, 0.24) inset,
-      0px 0px 68px 0px rgba(255, 255, 255, 0.05) inset;
-    backdrop-filter: blur(30px);
-    &:hover {
-      background-color: #af50bd;
-    }
-
-    @media (max-width: 500px) {
+    
+    @media (max-width: 780px) {
       width: 150px;
       font-size: 14px;
       padding: 0px 0%;
+      display: flex;
+      width: 200px;
+      padding: 12px 5%;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      border-radius: 40px;
+      border: 1px solid #5d3068;
+      background: rgba(18, 16, 19, 0.6);
+      box-shadow: 0px 2px 4px 0px rgba(255, 255, 255, 0.24) inset,
+        0px 0px 68px 0px rgba(255, 255, 255, 0.05) inset;
+      backdrop-filter: blur(30px);
+      &:hover {
+        background-color: #af50bd;
+      }
     }
-  }
 `;
 const SearchBox = styled.div`
   width: 100%;
@@ -394,8 +364,22 @@ const Th1 = styled(Th)`
   }
 `;
 
+
 export default function Collections() {
-  const [isMyPage, setToMyPage] = useState(false);
+  const [isMyPage, setToMyPage] = useState(true);
+  const [bg, setBg] = useState('left');
+
+  useEffect(() => {
+    if (isMyPage) {
+      setBg('left')
+    } else {
+      setBg('right');
+    }
+  }, [isMyPage])
+
+  useEffect(() => {
+    console.log('background', bg)
+  }, [bg])
 
   return (
     <FullDiv>
@@ -416,17 +400,13 @@ export default function Collections() {
         POPULAR COLLECTIONS
       </H1Top>
       <Space $height={40} $mdH={30} />
-      <TblContainer>
-        <StyleMain>
-          <CollectionBgStyle $reversed={isMyPage} />
-          <FancyGoo />
-        </StyleMain>
+      <TblContainer $bg={`/images/bg/staking_bg_${bg}.png`}>
         <FlexDiv>
           <H2_24
             $weight={300}
             $color="white"
             onClick={() => {
-              setToMyPage(false);
+              setToMyPage(true);
             }}
           >
             All collections
@@ -435,15 +415,14 @@ export default function Collections() {
             $weight={300}
             $color="white"
             onClick={() => {
-              setToMyPage(true);
+              setToMyPage(false);
             }}
           >
             My watchlist
           </H2_24>
         </FlexDiv>
-        <Space $height={90} $mdH={30} />
+        <Space $height={50} $mdH={30} />
         <SpaceWhenLg $height={200} />
-
         <SearchBox>
           <Search placeholder="Search"></Search>
           <DivGap>
