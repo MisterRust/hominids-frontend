@@ -14,11 +14,9 @@ import {
     TabBody,
     FirstRow,
     LabelNam,
-    // TabButton,
     SaveBtn,
     PartTitle,
     Hr_image,
-    Text_Style,
 } from './index.styled';
 import { useState } from "react";
 
@@ -31,8 +29,6 @@ const Setting = () => {
     const handleChange = () => {
         setState(!state)
     }
-
-
 
     return (
         <StyleBody>

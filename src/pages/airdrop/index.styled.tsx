@@ -178,7 +178,8 @@ export const CardBox = styled.div`
     margin-top: 56px;
     display: flex; 
     padding: 48px 144px; 
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    justify-content: center;
     @media (max-width: 1176px){
         padding: 24px 30px;
     }
@@ -186,7 +187,6 @@ export const CardBox = styled.div`
         flex-direction: column;
         padding: 24px 50px;
         margin: 56px 20px 56px;
-        justify-content: center;
         align-items: center;
     }
 `

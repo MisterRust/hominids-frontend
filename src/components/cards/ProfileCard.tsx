@@ -97,12 +97,12 @@ export const ProfileBtn = ({
 }) => {
   const { width } = useWindowSize();
   const [imgWidth, setImgWidth] = useState(400);
-  const imgRef = useRef();
+  const imgRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
     if (imgRef && imgRef.current) {
-      console.log(imgRef);
-      setImgWidth(imgRef.current.clientWidth);
+      console.log(imgRef, 'imgRef');
+      setImgWidth(imgRef.current?.clientWidth);
     }
   }, [width]);
 

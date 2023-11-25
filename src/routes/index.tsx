@@ -45,6 +45,7 @@ const MainRouter = () => {
         <Route path="/airdrop" element={<Airdrop />} />
         <Route path="/profile" element={<Profile />} />
       </Route>
+      <Route path="*" element={<>Page not found</>} />
     </Routes>
   );
 };

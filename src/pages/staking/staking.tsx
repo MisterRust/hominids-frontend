@@ -20,17 +20,10 @@ import {
     Tabbox,
     HeaderChildActive
 } from './index.styled';
-import { useState } from "react";
 
 const Staking = () => {
 
     const navigate = useNavigate();
-
-    const [state, setState] = useState(false);
-
-    const handleChange = () => {
-        setState(!state)
-    }
 
   return (
     <StyleBody>
