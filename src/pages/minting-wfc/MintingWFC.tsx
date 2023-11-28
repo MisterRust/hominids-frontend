@@ -44,9 +44,10 @@ import {
   Explore,
   CenterText,
 } from "./index.styled";
+import { SvgLine } from "pages/profile/index.styled";
 
 const Svg = (
-  <svg
+  <SvgLine
     xmlns="http://www.w3.org/2000/svg"
     width="40"
     height="2"
@@ -69,7 +70,7 @@ const Svg = (
         <stop offset="1" stopColor="#121013" />
       </linearGradient>
     </defs>
-  </svg>
+  </SvgLine>
 );
 
 const horizonLine = (
