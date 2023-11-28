@@ -14,6 +14,7 @@ import Staking from "pages/staking/staking";
 import Staking_hominid from "pages/staking/staking_hominid";
 import Airdrop from "pages/airdrop";
 import Profile from "pages/profile/Profile";
+import Ranking from "pages/ranking/";
 
 const MainRouter = () => {
   return (
@@ -44,6 +45,7 @@ const MainRouter = () => {
         <Route path="/staking/hominid" element={<Staking_hominid />} />
         <Route path="/airdrop" element={<Airdrop />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/ranking" element={<Ranking />} />
       </Route>
       <Route path="*" element={<>Page not found</>} />
     </Routes>
