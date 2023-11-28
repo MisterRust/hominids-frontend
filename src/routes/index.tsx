@@ -15,6 +15,8 @@ import Staking_hominid from "pages/staking/staking_hominid";
 import Airdrop from "pages/airdrop";
 import Profile from "pages/profile/Profile";
 import Ranking from "pages/ranking/";
+import Farm from "pages/farm/farm";
+import Bridge from "pages/bridge/bridge";
 
 const MainRouter = () => {
   return (
@@ -46,6 +48,8 @@ const MainRouter = () => {
         <Route path="/airdrop" element={<Airdrop />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/ranking" element={<Ranking />} />
+        <Route path="/farm" element={<Farm />} />
+        <Route path="/bridge" element={<Bridge />} />
       </Route>
       <Route path="*" element={<>Page not found</>} />
     </Routes>
