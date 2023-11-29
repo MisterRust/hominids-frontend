@@ -10,6 +10,7 @@ import {
   Flex_SB,
   FullDiv,
   H_18,
+  H_24,
   H_40,
   H_magnet,
   InputSpec,
@@ -141,8 +142,8 @@ export default function Farm() {
                 <path
                   d="M17 12L15.2527 13.763C13.8592 15.1689 13.1625 15.8719 12.3133 15.9801C12.1053 16.0066 11.8947 16.0066 11.6867 15.9801C10.8375 15.8719 10.1408 15.1689 8.74731 13.763L7 12"
                   stroke="white"
-                  stroke-width="2"
-                  stroke-linecap="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
                 />
               </svg>
             </AllButton>
