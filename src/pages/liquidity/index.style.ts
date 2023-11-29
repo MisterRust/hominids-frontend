@@ -174,6 +174,14 @@ export const PlusSign = styled.div`
   color: white;
   border-radius: 12px;
   background: #af51bd;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  &:hover {
+    background-color: #af51bd50;
+  }
+  &:active {
+    transform: translate(3px, 3px);
+  }
 `;
 
 export const SvgHor = styled.div`
@@ -337,6 +345,14 @@ export const Btn_amount = styled.div`
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  &:hover {
+    background-color: #af51bd50;
+  }
+  &:active {
+    transform: translate(3px, 3px);
+  }
 `;
 
 export const MidBtn = styled.div`
@@ -358,6 +374,14 @@ export const MidBtn = styled.div`
   background: #af51bd;
   color: white;
   font-size: 30px;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  &:hover {
+    background-color: #af51bd50;
+  }
+  &:active {
+    background-color: #af51bd90;
+  }
 `;
 
 export const LeftPart = styled.div`

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Header from "components/layout/header";
 import {
   Container,
@@ -27,7 +28,6 @@ import {
   SwapInput,
   H_18,
   InputBox,
-  H_16,
   Meta,
   MetaSign,
   Coin,
@@ -41,6 +41,7 @@ import {
   SwapInput_S,
   DownText,
   SpanBox,
+  H_16_input,
 } from "./index.style";
 import { MenuBox, MenuItem } from "pages/minting-wfc/index.styled";
 import { Line1, Line2, Line3, Line4, Line5, Line6, Line7 } from "./svg";
@@ -98,6 +99,7 @@ const Lists = [
 ];
 
 export default function DexTab() {
+  const [on, setOn] = useState(false);
   return (
     <>
       <FullDiv>
@@ -177,7 +179,7 @@ export default function DexTab() {
               <SwapInput>
                 <H_18>Amount To Swap</H_18>
                 <InputBox>
-                  <H_16>0.0</H_16>
+                  <H_16_input placeholder="0.0" />
                   <MetaSign>
                     USDP <Meta />
                   </MetaSign>
@@ -194,7 +196,7 @@ export default function DexTab() {
               <SwapInput_S>
                 <H_18>To</H_18>
                 <InputBox>
-                  <H_16></H_16>
+                  <H_16_input />
                   <MetaSign>
                     USDT <Coin />
                   </MetaSign>
@@ -202,8 +204,8 @@ export default function DexTab() {
               </SwapInput_S>
               <SpanBox>
                 <BuyBtn>
-                  <SwitchBtn>
-                    <Ball />
+                  <SwitchBtn onClick={() => setOn(!on)}>
+                    <Ball $on={on} />
                   </SwitchBtn>
                   <H_18>Buy</H_18>
                 </BuyBtn>

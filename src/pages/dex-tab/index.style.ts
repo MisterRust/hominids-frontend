@@ -50,6 +50,15 @@ export const OptionBtn = styled.div`
   gap: 8px;
   border-radius: 40px;
   border: 1px solid #5d3068;
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    background-color: #5d3068;
+  }
+  &:active {
+    background-color: #5d306850;
+    transform: translate(4px, 3px);
+  }
   /* box-shadow: 0px 2px 4px 0px rgba(255, 255, 255, 0.24) inset, 0px 0px 68px 0px rgba(255, 255, 255, 0.05) inset;
 backdrop-filter: blur(30px); */
   color: #fff;
@@ -295,6 +304,9 @@ export const Txt = styled.div`
         0px 0px 68px 0px rgba(255, 255, 255, 0.05) inset;
       backdrop-filter: blur(30px);
     }
+    &:active {
+      transform: translate(3px, 3px);
+    }
   }
   @media (max-width: 870px) {
     font-size: 16px;
@@ -354,7 +366,7 @@ export const InputBox = styled.div`
   /* max-width: 386px; */
   padding: 20px 32px;
   align-items: center;
-  gap: 100px;
+  /* gap: 100px; */
   border-radius: 16px;
   border: 3px solid #5d3068;
   background: rgba(255, 255, 255, 0.04);
@@ -371,6 +383,19 @@ export const H_16 = styled.div`
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+`;
+
+export const H_16_input = styled.input`
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #fff;
+  font-family: Lato;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  width: 20%;
 `;
 
 export const MetaSign = styled.div`
@@ -429,13 +454,16 @@ export const SwitchBtn = styled.div`
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.04);
   flex-shrink: 0;
+  cursor: pointer;
 `;
 
-export const Ball = styled.div`
+export const Ball = styled.div<{ $on: boolean }>`
   height: 40px;
   width: 40px;
   border-radius: 50%;
-  background-color: #fff;
+  transition: all 0.1s ease-in-out;
+  margin-left: ${(props) => (props.$on ? 40 : 0)}px;
+  background-color: ${(props) => (props.$on ? "#af50bd" : "#fff")};
 `;
 
 export const ConnectBtn = styled.div`
@@ -457,6 +485,13 @@ export const ConnectBtn = styled.div`
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  cursor: pointer;
+  &:hover {
+    background-color: #af50bd50;
+  }
+  &:active {
+    transform: translate(3px, 3px);
+  }
   @media (max-width: 500px) {
     margin: 0 auto;
   }
