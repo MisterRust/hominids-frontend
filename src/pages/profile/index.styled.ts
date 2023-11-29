@@ -234,7 +234,7 @@ export const BtnInd = styled.div`
   }
 `;
 
-export const SvgLine = styled.div`
+export const SvgLine = styled.svg`
   width: 0px;
   height: 1441px;
   transform: rotate(-90deg);
