@@ -24,6 +24,7 @@ import Transfer from "pages/transfer/transfer";
 import Reedeem from "pages/transfer/reedeem";
 import History from "pages/transfer/history";
 import NFTList from "pages/nftlist";
+import Swap from "pages/swap/swap";
 
 const MainRouter = () => {
   return (
@@ -67,6 +68,7 @@ const MainRouter = () => {
         <Route path="/transfer/reedeem" element={<Reedeem />} />
         <Route path="/transfer/history" element={<History />} />
         <Route path="/nftlist" element={<NFTList />} />
+        <Route path="/swap" element={<Swap />} />
       </Route>
       <Route path="*" element={<>Page not found</>} />
     </Routes>
