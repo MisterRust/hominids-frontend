@@ -15,6 +15,9 @@ align-items: center;
 gap: 24px;
 padding-left: 20px;
 padding-right: 20px;
+@media (max-width: 780px){
+    display: none;
+}
 
 `
 export const FontStyle = styled.h2`
@@ -42,9 +45,11 @@ export const BodyTitle = styled.h1`
     letter-spacing: 0em;
     text-align: center;
     color: white;
+    padding: 58px 0 44px 0;
     @media (max-width: 780px){
         background-image: none;
         font-size: 32px;
+        padding: 48px 0 32px 0;
     }
 `
 
@@ -56,6 +61,7 @@ export const MainTab1 = styled.div`
     padding: 0 24px;
     @media (max-width: 780px){
         background-image: none;
+        padding: 0 11px;
     }
 `
 export const MainTab2 = styled.div`
@@ -66,6 +72,7 @@ export const MainTab2 = styled.div`
     padding: 0 24px;
     @media (max-width: 780px){
         background-image: none;
+        padding: 0 11px;
     }
 `
 export const MainTab3 = styled.div`
@@ -74,9 +81,9 @@ export const MainTab3 = styled.div`
     background-size: 100% 100%;
     background-repeat: no-repeat;
     padding: 0 24px;
-    min-height: 800px;
     @media (max-width: 780px){
         background-image: none;
+        padding: 0 11px;
     }
 `
 
@@ -111,13 +118,37 @@ export const HeaderChild = styled.h3`
         width: auto;
         padding: 10px;
         font-size: 16px;
+        font-weight: 500;
+    }
+`
+export const HeaderChildActive = styled.h3`
+    width: 33%;
+    padding: 45px;
+    text-align: center;
+    // Profile
+    color: white;
+    font-size: 24px;
+    font-family: 'Lato';
+    font-weight: 700;
+    word-wrap: break-word;
+    cursor: pointer;
+    @media (max-width: 780px){
+        background: #AF50BD; 
+        box-shadow: 0px 2px 4px rgba(255, 255, 255, 0.24) inset;
+        border-radius: 40px; 
+        border: 1px #5D3068 solid; 
+        backdrop-filter: blur(60px);
+        width: auto;
+        padding: 10px;
+        font-size: 16px;
+        font-weight: 500;
     }
 `
 export const TabBody = styled.div`
     width: 100%;
     padding: 40px 100px;
     @media (max-width: 1024px){
-        padding: 40px;
+        padding: 20px;
         margin-top: 40px;
     }
     @media (max-width: 780px){
@@ -138,8 +169,21 @@ export const FirstRow = styled.div`
     @media (max-width: 780px){
         flex-direction: column;
         gap: 60px;
+        
     }
 `
+export const HeadPart = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    @media (max-width: 780px){
+        gap: 24px;
+    }
+    @media (max-width: 340px){
+        gap: 12px;
+    }
+`
+
 export const FR_Child = styled.div`
     width: 32%;
     display: flex;
@@ -148,6 +192,65 @@ export const FR_Child = styled.div`
     @media (max-width: 780px){
         width: 100%;
     }
+`
+
+export const F_Child = styled.div`
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    @media (max-width: 780px){
+        width: 100%;
+    }
+`
+
+export const T_Child = styled.div`
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    @media (max-width: 780px){
+        width: 100%;
+    }
+`
+
+export const LabelTextDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+`
+
+export const HeadNumber = styled.h1`
+    color: white;
+    font-size: 48px;
+    font-family: Lato;
+    font-weight: 900;
+    word-wrap: break-word;
+    @media (max-width: 780px){
+        font-size: 28px;
+    }
+`
+
+export const HeadTitle = styled.h2`
+    color: white;
+    font-size: 28px;
+    font-family: Lato;
+    font-weight: 700;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    @media (max-width: 780px){
+        font-size: 26px;
+    }
+`
+
+export const BottomLabel = styled.h3`
+    color: white;
+    font-size: 16px;
+    font-family: Lato;
+    font-weight: 500;
+    text-decoration: underline;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    cursor: pointer;
 `
 
 export const SC_Child = styled.div`
@@ -181,6 +284,36 @@ export const TabInput = styled.input`
     border-radius: 16px; 
     border: 1px #5D3068 solid; 
     backdrop-filter: blur(60px);
+    padding: 0 24px;
+    // Enter the contact address
+    color: #AAA5A5;
+    font-size: 20px;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 30px;
+    word-wrap: break-word;
+`
+
+export const TabSelect = styled.select`
+    width: 100%;
+    height: 59px;
+    /* border-radius: 16px; */
+    /* border-color: rgba(93, 48, 104, 1), rgba(17, 16, 18, 1); */
+    background-color: transparent;
+    box-shadow: 0px 2px 4px rgba(255, 255, 255, 0.24) inset; 
+    border-radius: 16px; 
+    border: 1px #5D3068 solid; 
+    backdrop-filter: blur(60px);
+    color: #AAA5A5;
+    font-size: 20px;
+    font-family: 'Inter';
+    font-weight: 400;
+    line-height: 30px;
+    cursor: pointer;
+`
+
+export const TabOption = styled.option`
+    width: 80%;
 `
 
 export const TabButton = styled.button`
@@ -228,7 +361,6 @@ export const SaveBtn = styled.button`
     padding: 25px 0;
     border-radius: 100px;
     background-color: rgba(175, 80, 189, 1);
-    margin: auto;
     font-family: 'Lato';
     font-size: 16px;
     font-weight: 500;
@@ -236,11 +368,16 @@ export const SaveBtn = styled.button`
     letter-spacing: 0em;
     text-align: center;
     color: white;
+    cursor: pointer;
+    :hover{
+        background-color: transparent;
+        color: black;
+    }
     @media (max-width: 430px){
         width: auto;
         padding: 20px 25px;
     }
-
+    
 `// Notification
 
 export const PartTitle = styled.h1`
@@ -299,5 +436,29 @@ export const Text_Style = styled.span`
     font-family: Lato;
     font-weight: 500;
     line-height: 22.68px;
-    word-wrap: break-word
+    word-wrap: break-word;
+`
+
+export const NoDataRow = styled.div`
+    margin-top: 100px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 22px;
+    align-items: center;
+`
+
+export const NoDataText = styled.h1`
+    // No data
+    color: white;
+    font-size: 24px;
+    font-family: 'Lato';
+    font-weight: 700;
+    word-wrap: break-word;
+    padding-right: 20px;
+`
+
+export const NoDataImage = styled.img`
+    width: 119px;
+    height: 119px;
 `

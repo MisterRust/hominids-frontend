@@ -17,6 +17,9 @@ import Profile from "pages/profile/Profile";
 import Ranking from "pages/ranking/";
 import Farm from "pages/farm/farm";
 import Bridge from "pages/bridge/bridge";
+import Transfer from "pages/transfer/transfer";
+import Reedeem from "pages/transfer/reedeem";
+import History from "pages/transfer/history";
 
 const MainRouter = () => {
   return (
@@ -50,6 +53,9 @@ const MainRouter = () => {
         <Route path="/ranking" element={<Ranking />} />
         <Route path="/farm" element={<Farm />} />
         <Route path="/bridge" element={<Bridge />} />
+        <Route path="/transfer" element={<Transfer />} />
+        <Route path="/transfer/reedeem" element={<Reedeem />} />
+        <Route path="/transfer/history" element={<History />} />
       </Route>
       <Route path="*" element={<>Page not found</>} />
     </Routes>
