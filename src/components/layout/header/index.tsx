@@ -34,9 +34,12 @@ const StyleChainGroup = styled.div`
 `;
 
 const ImgBox = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  /* grid-template-columns: repeat(4, 1fr); */
+  /* gap: 8px; */
 `;
 
 const StyleChinIcon = styled.img`
@@ -69,7 +72,7 @@ const BarContainer = styled.div`
   }
 `;
 
-const Logo = styled.div`
+const Logo = styled.div<{ $logo: string }>`
   width: 110px;
   height: 42px;
   flex-shrink: 0;
@@ -93,12 +96,92 @@ const Button = styled.div`
   }
 `;
 
-const Header = () => {
+const Another = styled.div`
+  display: flex;
+  height: 62px;
+  padding: 21px 24px;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  border: 3px solid #5d3068;
+  background: #111012;
+  border-radius: 10000px;
+  color: white;
+`;
+
+const StyleButtonGroup = styled.div`
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 16px;
+  padding: 21px 24px;
+  background: #111012;
+  border-radius: 10000px;
+  color: white;
+  color: var(--text-secondary, #93989c);
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Lato;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 112.5% */
+  letter-spacing: -0.098px;
+  border-radius: 1000px;
+  border: 3px solid #5d3068;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(30px);
+  &:hover {
+    box-shadow: 0px 2px 4px 0px rgba(255, 255, 255, 0.24) inset,
+      0px 0px 68px 0px rgba(255, 255, 255, 0.05) inset;
+  }
+`;
+
+const SearchSign = styled.svg`
+  display: flex;
+  width: 24px;
+  height: 24px;
+  padding: 2.778px 2.458px 2px 2.778px;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Profile = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #fff;
+  text-align: center;
+  font-family: Lato;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+`;
+
+const CircularAvatar = styled.div`
+  display: flex;
+  width: 63px;
+  height: 63px;
+  padding: 25px;
+  align-items: center;
+  /* gap: 10px; */
+  border-radius: 50%;
+  background: linear-gradient(
+    98deg,
+    #f8d46b 1.78%,
+    #a74fbe 37.37%,
+    #302072 89.89%
+  );
+`;
+
+const Header = ({ isProfilePage }: { isProfilePage?: boolean }) => {
   const [barVisible, setBarVisible] = useState(true);
   const [visible, setVisible] = useState(true);
   const { width, height } = useWindowSize();
 
-  const onBtnClick = (e) => {
+  const onBtnClick = () => {
     if (window.innerWidth < 768) {
       setVisible(!visible);
     }
@@ -143,20 +226,80 @@ const Header = () => {
           <StyleChainGroup>
             {width > 768 && <Logo $logo={logo} />}
             <ImgBox>
-              <StyleChinIcon src={polygon} />
-              <StyleChinIcon src={frame} />
+              {isProfilePage === true && width > 1200 ? (
+                <Another>
+                  <StyleChinIcon src={polygon} /> MATIC
+                </Another>
+              ) : (
+                <StyleChinIcon src={polygon} />
+              )}
+
               <StyleChinIcon src={zeta} />
+              <StyleChinIcon src={frame} />
               <StyleChinIcon src={btc} />
             </ImgBox>
           </StyleChainGroup>
           <StyleMainGroup>
             <Tab />
-            <GradientButton
-              width={257}
-              height={63}
-              title="CONNECT WALLET"
-              icon="Wallet"
-            />
+            {!(isProfilePage && width > 1280) ? (
+              <GradientButton
+                width={257}
+                height={63}
+                title="CONNECT WALLET"
+                icon="Wallet"
+              />
+            ) : (
+              <>
+                <StyleButtonGroup>
+                  <SearchSign
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="22"
+                    height="22"
+                    viewBox="0 0 22 22"
+                    fill="none"
+                  >
+                    <g id="Search">
+                      <circle
+                        id="Ellipse_739"
+                        cx="10.7659"
+                        cy="10.2666"
+                        r="8.98856"
+                        stroke="#93989C"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        id="Line_181"
+                        d="M17.0195 16.9851L20.5436 20.5"
+                        stroke="#93989C"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </g>
+                  </SearchSign>
+                  Search
+                </StyleButtonGroup>
+                <Profile>
+                  <CircularAvatar /> A743J43...HGY
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="25"
+                    viewBox="0 0 24 25"
+                    fill="none"
+                  >
+                    <path
+                      d="M17 12.5L15.2527 14.263C13.8592 15.6689 13.1625 16.3719 12.3133 16.4801C12.1053 16.5066 11.8947 16.5066 11.6867 16.4801C10.8375 16.3719 10.1408 15.6689 8.74731 14.263L7 12.5"
+                      stroke="white"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </Profile>
+              </>
+            )}
           </StyleMainGroup>
         </>
       )}

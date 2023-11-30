@@ -75,7 +75,6 @@ export const NftCard2 = ({
   items,
   floorPrice,
   volume,
-  avatar,
 }: {
   items: number;
   floorPrice: number;
@@ -85,7 +84,7 @@ export const NftCard2 = ({
   return (
     <CardContainer>
       <ContentBox>
-        <Avatar $avatar={avatar}>
+        <Avatar>
           <Status>
             <Text>
               <UpperText></UpperText> <Value>{items}</Value>

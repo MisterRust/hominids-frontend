@@ -92,7 +92,7 @@ export default function List({
           <Index>{"0" + (index + 1)}</Index>
           {title}
         </span>
-        <Button onClick={(e) => onBtnClick(index)}>
+        <Button onClick={() => onBtnClick(index)}>
           {visible ? (
             <SvgIcon
               xmlns="http://www.w3.org/2000/svg"

@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 import Lists from "components/list/lists";
 import { H1, H4 } from "styles";
-import { BackgroundEffect } from "components/background";
+// import { BackgroundEffect } from "components/background";
 import { TabButton } from "components/buttons";
 import { Card, NftCard } from "components/cards";
 import { LandingpageBanner } from "components/lpbanner";
@@ -17,11 +17,11 @@ import userImg from "../assets/cards/user_avatar.png";
 import decoImg from "../assets/bg.png";
 
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
+import "swiper/css";
+import "swiper/css/navigation";
 
 const BUTTONS = [
   "All",
@@ -229,7 +229,6 @@ const NftContainer = styled.div`
     flex-wrap: nowrap;
     overflow-x: auto;
     justify-content: start;
-
   }
 `;
 
@@ -464,7 +463,7 @@ const InputContainer = styled.div`
 const Bg = styled.div`
   width: 100%;
   height: 900px;
-  background-image: url(${(props) => decoImg});
+  background-image: url(${() => decoImg});
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
@@ -624,9 +623,9 @@ export default function LandingPage() {
         ))}
       </ButtonBox>
       <CardBox>
-        <Swiper slidesPerView={'auto'} spaceBetween={36} className="mySwiper">
+        <Swiper slidesPerView={"auto"} spaceBetween={36} className="mySwiper">
           {CARDS.map((card, index) => (
-            <SwiperSlide key={index} style={{ flexShrink: '1' }}>
+            <SwiperSlide key={index} style={{ flexShrink: "1" }}>
               <Card
                 key={index}
                 userImg={card.userImg}
@@ -691,19 +690,18 @@ export default function LandingPage() {
       </AboutContainer>
       <NftBox>
         <NftContainer>
-        <Swiper slidesPerView={'auto'} spaceBetween={36} className="mySwiper">
-          {NFTS.map((nft, index) => (
-            <SwiperSlide key={index} style={{ flexShrink: '1' }}>
-
-              <NftCard
-                key={index}
-                items={nft.items}
-                floorPrice={nft.floorPrice}
-                volume={nft.volume}
-                avatar={nft.avatar}
-              ></NftCard>
-            </SwiperSlide>
-          ))}
+          <Swiper slidesPerView={"auto"} spaceBetween={36} className="mySwiper">
+            {NFTS.map((nft, index) => (
+              <SwiperSlide key={index} style={{ flexShrink: "1" }}>
+                <NftCard
+                  key={index}
+                  items={nft.items}
+                  floorPrice={nft.floorPrice}
+                  volume={nft.volume}
+                  avatar={nft.avatar}
+                ></NftCard>
+              </SwiperSlide>
+            ))}
           </Swiper>
         </NftContainer>
       </NftBox>
@@ -770,9 +768,9 @@ export default function LandingPage() {
           </Texts>
         </SellerBox>
         <CardBox>
-          <Swiper slidesPerView={'auto'} spaceBetween={36} className="mySwiper">
+          <Swiper slidesPerView={"auto"} spaceBetween={36} className="mySwiper">
             {CARDS.map((card, index) => (
-              <SwiperSlide key={index} style={{ flexShrink: '1' }}>
+              <SwiperSlide key={index} style={{ flexShrink: "1" }}>
                 <Card
                   userImg={card.userImg}
                   cardBgImg={card.cardImg}
@@ -783,10 +781,10 @@ export default function LandingPage() {
               </SwiperSlide>
             ))}
           </Swiper>
-          </CardBox>
-          <H1HideMargin $color="white" $weight={900} $align="center">
-            Our Partners
-          </H1HideMargin>
+        </CardBox>
+        <H1HideMargin $color="white" $weight={900} $align="center">
+          Our Partners
+        </H1HideMargin>
       </SellerContainer>
       <Container>
         <PartnersContainer>

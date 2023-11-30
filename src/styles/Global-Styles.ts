@@ -9,7 +9,8 @@ const Globalstyles = createGlobalStyle`
 }
 
 body {
-    background-color: #111012;
+    background-image: url('/images/bg/main_bg.jpg');
+    background-size: contain;
     font-family: 'Lato', sans-serif;
 }
 

@@ -86,7 +86,7 @@ const AvatarBox = styled.div`
   right: 30px;
   flex-shrink: 0;
   fill: rgba(184, 128, 255, 0.04);
-  strokewidth: 3px;
+  stroke-width: 3px;
   stroke: #5d3068;
   box-shadow: 0px 2px 4px 0px rgba(255, 255, 255, 0.24) inset,
     0px 0px 68px 0px rgba(255, 255, 255, 0.05) inset;
