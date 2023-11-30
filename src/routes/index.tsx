@@ -16,6 +16,9 @@ import Airdrop from "pages/airdrop";
 import Profile from "pages/profile/Profile";
 import Farm from "pages/farm/farm";
 import Bridge from "pages/bridge/bridge";
+import Manage from "pages/manage/Manage";
+import DexTab from "pages/dex-tab/DexTab";
+import Liquidity from "../pages/liquidity/Liquidity";
 
 const MainRouter = () => {
   return (
@@ -40,7 +43,10 @@ const MainRouter = () => {
         />
         <Route path="/collections" element={<Collections />} />
         <Route path="/settings" element={<SettingProfile />} />
-        <Route path="/settings/notification" element={<SettingNotification />} />
+        <Route
+          path="/settings/notification"
+          element={<SettingNotification />}
+        />
         <Route path="/settings/display" element={<SettingDisplay />} />
         <Route path="/staking" element={<Staking />} />
         <Route path="/staking/hominid" element={<Staking_hominid />} />
@@ -48,6 +54,9 @@ const MainRouter = () => {
         <Route path="/profile" element={<Profile />} />
         <Route path="/farm" element={<Farm />} />
         <Route path="/bridge" element={<Bridge />} />
+        <Route path="/manage" element={<Manage />} />
+        <Route path="/dex-tab" element={<DexTab />} />
+        <Route path="/liquidity" element={<Liquidity />} />
       </Route>
       <Route path="*" element={<>Page not found</>} />
     </Routes>
