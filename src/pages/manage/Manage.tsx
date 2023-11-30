@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   Active,
   ActiveBtn,
@@ -93,7 +93,7 @@ export default function Manage() {
     setModalVisible(false);
   };
 
-  const onModalClick = (e: Event) => {
+  const onModalClick = (e: { stopPropagation: () => void; }) => {
     e.stopPropagation();
   };
 
